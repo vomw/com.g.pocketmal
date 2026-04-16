@@ -49,12 +49,12 @@ android {
     signingConfigs {
 
         create("release") {
-            val keystorePropertiesFile = rootProject.file("/pocketmal.properties")
+            val keystorePropertiesFile = rootProject.file("pocketmal.properties")
             val keystoreProperties = Properties()
             keystoreProperties.load(FileInputStream(keystorePropertiesFile))
             keyAlias = keystoreProperties["keyAlias"] as String
             keyPassword = keystoreProperties["keyPassword"] as String
-            storeFile = File(keystoreProperties["keystore"] as String)
+            storeFile = rootProject.file(keystoreProperties["keystore"] as String)
             storePassword = keystoreProperties["keystore.password"] as String
         }
     }
