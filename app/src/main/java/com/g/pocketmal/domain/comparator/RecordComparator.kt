@@ -12,7 +12,7 @@ class RecordComparator(val sortingType: SortingType = SortingType.TITLE, val rev
 
         when (sortingType) {
             SortingType.TITLE ->
-                return (if (reverse) -1 else +1) * item1.seriesTitle.toLowerCase().compareTo(item2.seriesTitle.toLowerCase())
+                return (if (reverse) -1 else +1) * item1.seriesTitle.lowercase().compareTo(item2.seriesTitle.lowercase())
             SortingType.PROGRESS -> {
                 val firstComparing = when {
                     item1.myEpisodes < item2.myEpisodes -> +1
@@ -40,7 +40,7 @@ class RecordComparator(val sortingType: SortingType = SortingType.TITLE, val rev
         return if (firstComparing != 0) {
             (if (reverse) -1 else +1) * firstComparing
         } else {
-            item1.seriesTitle.toLowerCase().compareTo(item2.seriesTitle.toLowerCase())
+            item1.seriesTitle.lowercase().compareTo(item2.seriesTitle.lowercase())
         }
     }
 }

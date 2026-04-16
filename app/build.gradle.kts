@@ -15,11 +15,11 @@ android {
 
     namespace = "com.g.pocketmal"
 
-    compileSdkVersion(34)
+    compileSdk = 34
 
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(34)
+        minSdk = 21
+        targetSdk = 34
         versionCode = 216
         versionName = "5.0.6"
         applicationId = "com.g.pocketmal"

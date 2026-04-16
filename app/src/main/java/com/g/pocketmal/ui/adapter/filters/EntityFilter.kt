@@ -11,7 +11,7 @@ class EntityFilter(private val adapter: EntityAdapter) : Filter() {
 
     override fun performFiltering(constraint: CharSequence): FilterResults {
 
-        val searchText = constraint.toString().toLowerCase()
+        val searchText = constraint.toString().lowercase()
         val filteredData = getFilteredList(searchText)
 
         val result = FilterResults()
@@ -42,7 +42,7 @@ class EntityFilter(private val adapter: EntityAdapter) : Filter() {
         return if (searchText.isNotEmpty()) {
             val d2 = ArrayList(adapter.originalTitles)
             for (data in d2) {
-                if (data.seriesTitle.toLowerCase().contains(searchText)) {
+                if (data.seriesTitle.lowercase().contains(searchText)) {
                     filteredData.add(data)
                 }
             }
